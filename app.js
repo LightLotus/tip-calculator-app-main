@@ -25,7 +25,7 @@ let calculateTip = 0;
 let calculateTotal = 0;
 
 const calculateTipAmt = percent => {
-        calculateTip = (parseInt(billInput.value) * percent) / numPeople.value;
+        calculateTip = (parseFloat(billInput.value) * percent) / numPeople.value;
         calculateTotal = (billInput.value / numPeople.value) + calculateTip;
         tipDisplay.innerText = `${calculateTip.toFixed(2)}`;
         totalDisplay.innerText = `${calculateTotal.toFixed(2)}`;
