@@ -7,8 +7,8 @@ const fifty = document.querySelector(".fifty");
 const custom = document.querySelector(".custom-percent");
 const numPeople = document.querySelector("#number-of-people-input");
 const resetBtn = document.querySelector(".reset-btn");
-const totalDisplay = document.querySelector("#total-display")
-const tipDisplay = document.querySelector("#tip-amt-display")
+const totalDisplay = document.querySelector("#total-display");
+const tipDisplay = document.querySelector("#tip-amt-display");
 
 five.value = .05
 ten.value = .10
@@ -27,8 +27,8 @@ let calculateTotal = 0;
 const calculateTipAmt = percent => {
         calculateTip = (parseFloat(billInput.value) * percent) / numPeople.value;
         calculateTotal = (billInput.value / numPeople.value) + calculateTip;
-        tipDisplay.innerText = `${calculateTip.toFixed(2)}`;
-        totalDisplay.innerText = `${calculateTotal.toFixed(2)}`;
+        tipDisplay.innerText = `$${calculateTip.toFixed(2)}`;
+        totalDisplay.innerText = `$${calculateTotal.toFixed(2)}`;
         resetBtn.classList.add("reset-btn-active")
 }
 
