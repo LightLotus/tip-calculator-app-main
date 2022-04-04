@@ -25,11 +25,18 @@ let calculateTip = 0;
 let calculateTotal = 0;
 
 const calculateTipAmt = percent => {
-        calculateTip = (parseFloat(billInput.value) * percent) / numPeople.value;
+        calculateTip = (billInput.value * percent) / numPeople.value;
         calculateTotal = (billInput.value / numPeople.value) + calculateTip;
         tipDisplay.innerText = `$${calculateTip.toFixed(2)}`;
         totalDisplay.innerText = `$${calculateTotal.toFixed(2)}`;
         resetBtn.classList.add("reset-btn-active")
+
+        if((billInput.value==="") || (numPeople.value==="")) {
+            calculateTip = 0
+            calculateTotal = 0
+            tipDisplay.innerText = "$0.00"
+            totalDisplay.innerText = "$0.00"
+        }
 }
 
 five.addEventListener('click', () => {
